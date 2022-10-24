@@ -1,5 +1,5 @@
 {% extends "page.html" %}
-{% if announcement_login is string %}
+{% if announcement_login %}
   {% set announcement = announcement_login %}
 {% endif %}
 
@@ -15,25 +15,26 @@
 {{ custom_html | safe }}
 {% elif login_service %}
 <div class="service-login">
-  <p id='insecure-login-warning' class='hidden'>
-  Warning: JupyterHub seems to be served over an unsecured HTTP connection.
-  We strongly recommend enabling HTTPS for JupyterHub.
-  </p>
-
   <a role="button" class='btn btn-jupyter btn-lg' href='{{authenticator_login_url}}'>
     Sign in with {{login_service}}
   </a>
 </div>
 {% else %}
-<form action="{{authenticator_login_url}}" method="post" role="form">
+<form action="{{login_url}}?next={{next}}" method="post" role="form">
   <div class="auth-form-header">
-    Sign in
+    로그인
   </div>
   <div class='auth-form-body'>
-
+    <table align="center">
+      <tr>
+        <td>
+          <a href="http://www.dwcts.co.kr/"><img src="https://raw.githubusercontent.com/HSB-Labs-DWCTS/the-littlest-jupyterhub-dwcts/main/hub/share/jupyterhub/logo_gnb_on.png" width="158"/></a>
+        </td>
+      </tr>
+    </table>
     <p id='insecure-login-warning' class='hidden'>
-    Warning: JupyterHub seems to be served over an unsecured HTTP connection.
-    We strongly recommend enabling HTTPS for JupyterHub.
+    경고: 보안되지 않은 HTTP 연결을 통해 제공되는 것 같습니다.
+    HTTPS를 활성화하는 것이 좋습니다.
     </p>
 
     {% if login_error %}
@@ -41,24 +42,22 @@
       {{login_error}}
     </p>
     {% endif %}
-    <label for="username_input">Username:</label>
+    <label for="username_input">아이디:</label>
     <input
       id="username_input"
       type="text"
       autocapitalize="off"
       autocorrect="off"
-      autocomplete="username"
       class="form-control"
       name="username"
       val="{{username}}"
       tabindex="1"
       autofocus="autofocus"
     />
-    <label for='password_input'>Password:</label>
+    <label for='password_input'>비밀번호:</label>
     <input
       type="password"
       class="form-control"
-      autocomplete="current-password"
       name="password"
       id="password_input"
       tabindex="2"
@@ -69,7 +68,7 @@
         id="login_submit"
         type="submit"
         class='btn btn-jupyter'
-        value='Sign in'
+        value='로그인'
         tabindex="3"
         />
       <div class="feedback-widget hidden">
