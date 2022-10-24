@@ -25,7 +25,9 @@ doInstall() {
   
   docker exec -it tljh-dev sh -c "tljh-config set user_environment.default_app jupyterlab && tljh-config reload hub"
   
-  docker exec -it tljh-dev sh -c "export PATH=$PATH:/opt/tljh/user/bin && conda install -c conda-forge jupyterlab-language-pack-ko-KR -y"
+  docker exec -it tljh-dev sh -c "export PATH=$PATH:/opt/tljh/user/bin && conda install -c conda-forge \
+    jupyterlab-language-pack-ko-KR
+    -y"
 
   docker exec -it tljh-dev sh -c "export PATH=$PATH:/opt/tljh/user/bin && conda install -c conda-forge \
     nodejs=16 \
@@ -42,8 +44,7 @@ doInstall() {
 
   docker exec -it tljh-dev sh -c "pip install \
     jupyterlab-nvdashboard \
-    nbconvert \
-    -y"
+    nbconvert"
     
   docker exec -it tljh-dev /bin/bash
   ps
