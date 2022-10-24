@@ -28,7 +28,7 @@ doInstall() {
   docker exec -it dwcts-tljh sh -c "export PATH=$PATH:/opt/tljh/user/bin && conda install -c conda-forge -y \
     jupyterlab-language-pack-ko-KR"
 
-  docker exec -it dwcts-tljh sh -c "conda install -c conda-forge -y \
+  docker exec -it dwcts-tljh sh -c "export PATH=$PATH:/opt/tljh/user/bin && conda install -c conda-forge -y \
     nodejs=16 \
     jupyterlab-git \
     jupyterlab-github \
@@ -40,7 +40,7 @@ doInstall() {
     ipywidgets \
     jupyter-archive"
 
-  docker exec -it dwcts-tljh sh -c "pip install \
+  docker exec -it dwcts-tljh sh -c "export PATH=$PATH:/opt/tljh/user/bin && pip install \
     jupyterlab-nvdashboard \
     nbconvert"
 
