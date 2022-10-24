@@ -6,7 +6,7 @@ set -e
 # JupyterHub 설치 (docker)
 #
 
-do_run() {
+doRun() {
   git clone https://github.com/labs-dwcts/the-littlest-jupyterhub.git
   cd the-littlest-jupyterhub/
   
@@ -37,4 +37,4 @@ do_run() {
 #
 # 
 #
-do_run
+doRun

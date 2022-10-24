@@ -6,11 +6,11 @@ set -e
 # JupyterHub 설치 (hsblabs/tljh-dw-docker)
 #
 
-do_pull() {
+doPull() {
   docker pull labs/tljh-dw
 }
 
 #
 # 
 #
-do_pull
+doPull
