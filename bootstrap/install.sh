@@ -19,6 +19,11 @@ doInstall() {
   # installation
   curl -L https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyterhub/main/bootstrap/bootstrap.py | sudo -E python3 - --admin admin
   
+  # git clone
+  git clone https://github.com/labs-dwcts/the-littlest-jupyterhub temp
+  sudo cp -fr temp/share/jupyterhub/ /opt/tljh/hub/share/
+  rm -fr temp
+
   # settings
   # change default user interface for users
   sudo tljh-config set user_environment.default_app jupyterlab
