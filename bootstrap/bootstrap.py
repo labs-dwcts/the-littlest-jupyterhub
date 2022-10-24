@@ -292,7 +292,7 @@ def _resolve_git_version(version):
             "ls-remote",
             "--tags",
             "--refs",
-            "https://github.com/jupyterhub/labs-dwcts/the-littlest-jupyterhub.git",
+            "https://github.com/labs-dwcts/the-littlest-jupyterhub.git",
         ]
     )
 
