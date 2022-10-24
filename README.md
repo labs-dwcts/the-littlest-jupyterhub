@@ -68,4 +68,4 @@ If something is confusing to you in the documentation, it is a bug. We would be
 happy if you could [file an issue](https://github.com/jupyterhub/the-littlest-jupyterhub/issues) about it - or
 even better, [contribute a documentation fix](http://the-littlest-jupyterhub.readthedocs.io/en/latest/contributing/docs.html)!
 
-# the-littlest-jupyterhub
+### the-littlest-jupyterhub
