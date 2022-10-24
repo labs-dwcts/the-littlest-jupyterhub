@@ -56,7 +56,8 @@ sudo usermod -a -G docker $USER
 
 ## Install dwcts-tljh
 ```
-sudo wget -qO- https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyterhub/main/bootstrap/installtljhdocker.sh | sh
+git clone https://github.com/labs-dwcts/the-littlest-jupyterhub.git install
+
 ```
 
 ## Docker Pull

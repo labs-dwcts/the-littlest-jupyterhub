@@ -24,6 +24,8 @@ doInstall() {
   
   docker exec -it dwcts-tljh sh -c "tljh-config set user_environment.default_app jupyterlab && tljh-config reload hub"
   
+  docker cp share/jupyterhub/ dwcts-tljh:/opt/tljh/hub/share
+
   docker exec -it dwcts-tljh sh -c "export PATH=$PATH:/opt/tljh/user/bin && conda install -c conda-forge -y \
     jupyterlab-language-pack-ko-KR"
 
@@ -43,9 +45,9 @@ doInstall() {
     jupyterlab-nvdashboard \
     nbconvert"
 
-  docker exec -it dwcts-tljh sh -c "git clone https://github.com/labs-dwcts/the-littlest-jupyterhub temp \
-    && cp -fr temp/share/jupyterhub/ /opt/tljh/hub/share/ \
-    && rm -fr temp"
+  # docker exec -it dwcts-tljh sh -c "git clone https://github.com/labs-dwcts/the-littlest-jupyterhub temp \
+  #   && cp -fr temp/share/jupyterhub/ /opt/tljh/hub/share/ \
+  #   && rm -fr temp"
 
   docker exec -it dwcts-tljh /bin/bash
   ps
