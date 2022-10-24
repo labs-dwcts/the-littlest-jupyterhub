@@ -45,7 +45,11 @@ doInstall() {
   docker exec -it tljh-dev sh -c "pip install \
     jupyterlab-nvdashboard \
     nbconvert"
-    
+
+  docker exec -it tljh-dev sh -c "git clone https://github.com/labs-dwcts/the-littlest-jupyterhub temp \
+    && cp -fr temp/share/jupyterhub/ /opt/tljh/hub/share/ \
+    && rm -fr temp"
+
   docker exec -it tljh-dev /bin/bash
   ps
   exit
