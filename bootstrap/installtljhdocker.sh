@@ -7,8 +7,8 @@ set -e
 #
 
 doInstall() {
-  git clone https://github.com/labs-dwcts/the-littlest-jupyterhub.git
-  cd the-littlest-jupyterhub/
+  git clone https://github.com/labs-dwcts/the-littlest-jupyterhub.git setup
+  cd setup/
   
   docker build -t tljh-systemd . -f integration-tests/Dockerfile
   
@@ -44,6 +44,8 @@ doInstall() {
     jupyterlab-nvdashboard \
     nbconvert"
 
+  docker cp ~/data/test.md tmp_container:/root/data/
+
   docker exec -it dwcts-tljh sh -c "git clone https://github.com/labs-dwcts/the-littlest-jupyterhub temp \
     && cp -fr temp/share/jupyterhub/ /opt/tljh/hub/share/ \
     && rm -fr temp"
@@ -51,7 +53,7 @@ doInstall() {
   docker exec -it dwcts-tljh /bin/bash
   ps
   exit
-  
+
   # export PATH=$PATH:/opt/tljh/user/bin
 }
 
