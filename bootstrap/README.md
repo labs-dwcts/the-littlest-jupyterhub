@@ -1,4 +1,4 @@
-# the-littlest-jupyterhub-dwcts
+# dwcts-the-littlest-jupyterhub
 
 # Bare metal
 
