@@ -25,11 +25,10 @@ doInstall() {
   
   docker exec -it tljh-dev sh -c "tljh-config set user_environment.default_app jupyterlab && tljh-config reload hub"
   
-  docker exec -it tljh-dev sh -c "export PATH=$PATH:/opt/tljh/user/bin && conda install -c conda-forge \
-    jupyterlab-language-pack-ko-KR
-    -y"
+  docker exec -it tljh-dev sh -c "export PATH=$PATH:/opt/tljh/user/bin && conda install -c conda-forge -y \
+    jupyterlab-language-pack-ko-KR"
 
-  docker exec -it tljh-dev sh -c "export PATH=$PATH:/opt/tljh/user/bin && conda install -c conda-forge \
+  docker exec -it tljh-dev sh -c "export PATH=$PATH:/opt/tljh/user/bin && conda install -c conda-forge -y \
     nodejs=16 \
     jupyterlab-git \
     jupyterlab-github \
@@ -39,8 +38,7 @@ doInstall() {
     jupyterlab-lsp \
     python-lsp-server \
     ipywidgets \
-    jupyter-archive \
-    -y"
+    jupyter-archive"
 
   docker exec -it tljh-dev sh -c "pip install \
     jupyterlab-nvdashboard \
