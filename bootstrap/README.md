@@ -52,7 +52,6 @@ sudo curl -L https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyterhu
 dockeruserset.sh
 ```
 sudo usermod -a -G docker $USER
-sudo usermod -a -G docker $(whoami)
 ```
 
 ## Docker Pull
