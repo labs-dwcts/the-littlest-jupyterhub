@@ -6,7 +6,7 @@ set -e
 # JupyterHub 설치 (docker)
 #
 
-doRun() {
+doInstall() {
   git clone https://github.com/labs-dwcts/the-littlest-jupyterhub.git
   cd the-littlest-jupyterhub/
   
@@ -26,6 +26,24 @@ doRun() {
   docker exec -it tljh-dev sh -c "tljh-config set user_environment.default_app jupyterlab && tljh-config reload hub"
   
   docker exec -it tljh-dev sh -c "export PATH=$PATH:/opt/tljh/user/bin && conda install -c conda-forge jupyterlab-language-pack-ko-KR -y"
+
+  docker exec -it tljh-dev sh -c "export PATH=$PATH:/opt/tljh/user/bin && conda install -c conda-forge \
+    nodejs=16 \
+    jupyterlab-git \
+    jupyterlab-github \
+    jupyterlab_execute_time \
+    jupyterlab-variableinspector \
+    jupyterlab-drawio \
+    jupyterlab-lsp \
+    python-lsp-server \
+    ipywidgets \
+    jupyter-archive \
+    -y"
+
+  docker exec -it tljh-dev sh -c "pip install \
+    jupyterlab-nvdashboard \
+    nbconvert \
+    -y"
     
   docker exec -it tljh-dev /bin/bash
   ps
@@ -37,4 +55,4 @@ doRun() {
 #
 # 
 #
-doRun
+doInstall
