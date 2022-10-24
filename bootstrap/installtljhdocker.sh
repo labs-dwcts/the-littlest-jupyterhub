@@ -51,7 +51,7 @@ doInstall() {
   docker exec -it dwcts-tljh /bin/bash
   ps
   exit
-    
+  
   # export PATH=$PATH:/opt/tljh/user/bin
 }
 
