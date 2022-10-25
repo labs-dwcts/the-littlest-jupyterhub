@@ -66,7 +66,7 @@ rm -fr install
 ## Docker Pull
 dockerpull.sh
 ```
-docker pull labs/tljh-dw
+docker pull labsdwcts/dwcts-tljh
 ```
 
 ## Test tljh-dwcts is with Docker
@@ -75,15 +75,15 @@ dockerrun.sh
 docker run \
   --privileged \
   --detach \
-  --name=tljh-dw \
+  --name=dwcts-tljh \
   --publish 12000:80 \
   --mount type=bind,source=$(pwd),target=/srv/src \
-  hsblabs/tljh-dw
+  labsdwcts/dwcts-tljh
 ```
 
 ## Shell inside the running docker container
 ```
-docker exec -it tljh-dw /bin/bash
+docker exec -it dwcts-tljh /bin/bash
 ```
 
 ## Login
