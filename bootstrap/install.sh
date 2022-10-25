@@ -12,8 +12,8 @@ doInstall() {
   # sudo apt upgrade -y
   
   # prerequisites
-  sudo apt install -y build-essential  
-  sudo apt install -y python3 python3-dev git curl  
+  sudo apt install -y build-essential
+  sudo apt install -y python3 python3-dev git curl
   curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - && sudo apt install -y nodejs
   
   # installation
@@ -35,7 +35,6 @@ doInstall() {
   # jupyterlab ko-KR language pack
   sudo -E /opt/tljh/user/bin/conda install -c conda-forge -y \
     jupyterlab-language-pack-ko-KR
-  # sudo sed -i 's/en_US/ko_KR/g' /home/jupyter-admin/.jupyter/lab/user-settings/@jupyterlab/translation-extension/plugin.jupyterlab-settings
   
   # extension
   # conda-forge
@@ -55,13 +54,6 @@ doInstall() {
   sudo -E /opt/tljh/user/bin/pip install \
     jupyterlab-nvdashboard \
     nbconvert
-    
-  # extension list
-  # sudo /opt/tljh/user/bin/jupyter server extension list
-  
-  # config
-  # echo 'export PATH=$PATH:/opt/tljh/user/bin' >> ~/.bashrc
-  # source ~/.bashrc
 }
 
 #
