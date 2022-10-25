@@ -66,17 +66,6 @@ sudo wget -qO- https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyter
 sudo curl -L https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyterhub/main/bootstrap/container/rundwctstljh.sh | sh
 ```
 
-## Test tljh-dwcts is with Docker
-```
-docker run \
-  --privileged \
-  --detach \
-  --name=dwcts-tljh \
-  --publish 12000:80 \
-  --mount type=bind,source=$(pwd),target=/srv/src \
-  labsdwcts/dwcts-tljh
-```
-
 ## Shell inside the running docker container
 ```
 docker exec -it dwcts-tljh /bin/bash
@@ -102,7 +91,7 @@ docker pull labsdwcts/dwcts-tljh
 ```
 git clone https://github.com/labs-dwcts/the-littlest-jupyterhub.git install
 cd install/bootstrap/container
-sudo bash ./installtljhdocker.sh
+sudo bash ./installtljh.sh
 cd ../../
 rm -fr install
 ```
