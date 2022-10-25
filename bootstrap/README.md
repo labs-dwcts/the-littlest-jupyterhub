@@ -83,9 +83,9 @@ http://{Server IP}:12000
 DockerHub
 https://hub.docker.com/r/labsdwcts/dwcts-tljh
 
-```
-docker pull labsdwcts/dwcts-tljh
-```
+# Set Container
+
+Prerequisites: install docker and add docker group
 
 ## Install dwcts-tljh
 ```
@@ -94,4 +94,31 @@ cd install/bootstrap/setcontainer/
 sudo bash ./installtljh.sh
 cd ../../../
 rm -fr install
+```
+
+## commit container
+```
+docker ps --all
+
+docker commit CONTAINER IMAGE_NAME
+
+docker images
+```
+
+## push container
+```
+docker login
+username
+pwd
+
+export DOCKER_ID_USER=“labsdwcts”
+
+docker tag dwcts-tljh $DOCKER_ID_USER/dwcts-tljh
+docker push $DOCKER_ID_USER/dwcts-tljh
+```
+
+## pull container
+```
+```
+docker pull labsdwcts/dwcts-tljh
 ```
