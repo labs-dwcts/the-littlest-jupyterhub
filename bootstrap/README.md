@@ -124,6 +124,5 @@ docker push $DOCKER_ID_USER/dwcts-tljh
 
 ## pull container
 ```
-```
 docker pull labsdwcts/dwcts-tljh
 ```
