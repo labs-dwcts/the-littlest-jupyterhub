@@ -14,7 +14,7 @@ sudo apt-get install -y nodejs
 ```
 
 ## Installation
-`wget` 또는 `curl` 로 설치 합니다.
+Use `wget` or `curl`
 ### wget
 ```
 sudo wget -qO- https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyterhub/main/bootstrap/install.sh | sh
@@ -37,15 +37,15 @@ http://{Server IP}
 
 ## Install Docker
 
-`wget` 또는 `curl` 로 설치 합니다.
+Use `wget` or `curl`
 ### wget
 ```
-sudo wget -qO- https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyterhub/main/bootstrap/installdocker.sh | sh
+sudo wget -qO- https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyterhub/main/bootstrap/container/installdocker.sh | sh
 ```
 
 ### curl
 ```
-sudo curl -L https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyterhub/main/bootstrap/installdocker.sh | sh
+sudo curl -L https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyterhub/main/bootstrap/container/installdocker.sh | sh
 ```
 
 ## Add Docker group
@@ -88,7 +88,7 @@ docker pull labsdwcts/dwcts-tljh
 ## Install dwcts-tljh
 ```
 git clone https://github.com/labs-dwcts/the-littlest-jupyterhub.git install
-cd install/bootstrap/
+cd install/bootstrap/container
 sudo bash ./installtljhdocker.sh
 cd ../../
 rm -fr install
