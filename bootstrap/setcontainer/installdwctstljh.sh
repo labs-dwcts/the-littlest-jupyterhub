@@ -18,10 +18,10 @@ doInstall() {
     --name=dwcts-tljh \
     --publish 12000:80 \
     --mount type=bind,source=$(pwd),target=/srv/src \
-    # --restart="always" \
-    # --gpus all
-    # --gpus ‘”device=0,1”’
     tljh-systemd
+# --restart="always" \
+# --gpus all
+# --gpus ‘”device=0,1”’
 
   docker exec -i dwcts-tljh sh -c "python3 /srv/src/bootstrap/bootstrap.py --admin admin"
   
