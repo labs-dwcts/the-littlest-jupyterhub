@@ -100,22 +100,22 @@ sudo curl -L https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyterhu
 ```
 
 ## commit container
+check `docker ps --all` and `docker images`
 ```
-docker ps --all
-
-docker commit CONTAINER IMAGE_NAME
-
-docker images
+docker commit tljh-systemd dwcts-tljh
 ```
 
 ## push container
 ```
 docker login
-username
-pwd
+```
+input username and password
 
+```
 export DOCKER_ID_USER=“labsdwcts”
+```
 
+```
 docker tag dwcts-tljh $DOCKER_ID_USER/dwcts-tljh
 docker push $DOCKER_ID_USER/dwcts-tljh
 ```
