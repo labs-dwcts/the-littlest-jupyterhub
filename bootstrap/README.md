@@ -48,6 +48,11 @@ sudo wget -qO- https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyter
 sudo curl -L https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyterhub/main/bootstrap/container/installdocker.sh | sh
 ```
 
+## Add Docker group
+```
+sudo usermod -a -G docker $USER
+```
+
 ## Run dwcts-tljh
 
 Use `wget` or `curl`
