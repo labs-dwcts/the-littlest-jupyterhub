@@ -59,6 +59,8 @@ sudo usermod -a -G docker $USER
 git clone https://github.com/labs-dwcts/the-littlest-jupyterhub.git install
 cd install/bootstrap/
 sudo bash ./installtljhdocker.sh
+cd ../../
+rm -fr install
 ```
 
 ## Docker Pull

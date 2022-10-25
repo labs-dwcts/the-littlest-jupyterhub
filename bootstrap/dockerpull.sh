@@ -3,11 +3,11 @@
 set -e
 
 #
-# JupyterHub 설치 (hsblabs/tljh-dw-docker)
+# JupyterHub 설치 (labsdwcts/dwcts-tljh dockerhub)
 #
 
 doPull() {
-  docker pull labs/tljh-dw
+  docker pull labsdwcts/dwcts-tljh:latest
 }
 
 #
