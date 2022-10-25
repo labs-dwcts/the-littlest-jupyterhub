@@ -88,7 +88,6 @@ https://hub.docker.com/r/labsdwcts/dwcts-tljh
 Prerequisites: install docker and add docker group
 
 ## Install dwcts-tljh
-```
 Use `wget` or `curl`
 ### wget
 ```
