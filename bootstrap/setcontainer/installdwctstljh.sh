@@ -19,8 +19,6 @@ doInstall() {
   --publish 12000:80 \
   --mount type=bind,source=$(pwd),target=/srv/src \
   tljh-systemd
-  
-  sleep 5
 
   docker exec -it dwcts-tljh sh -c "python3 /srv/src/bootstrap/bootstrap.py --admin admin"
   
