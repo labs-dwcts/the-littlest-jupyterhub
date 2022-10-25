@@ -89,7 +89,7 @@ Prerequisites: install docker and add docker group
 
 ## Install dwcts-tljh
 ```
-git clone https://github.com/labs-dwcts/the-littlest-jupyterhub.git install
+sudo git clone https://github.com/labs-dwcts/the-littlest-jupyterhub.git install
 cd install/bootstrap/setcontainer/
 sudo bash ./installtljh.sh
 cd ../../../
