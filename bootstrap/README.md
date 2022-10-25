@@ -90,8 +90,8 @@ docker pull labsdwcts/dwcts-tljh
 ## Install dwcts-tljh
 ```
 git clone https://github.com/labs-dwcts/the-littlest-jupyterhub.git install
-cd install/bootstrap/container
+cd install/bootstrap/setcontainer/
 sudo bash ./installtljh.sh
-cd ../../
+cd ../../../
 rm -fr install
 ```
