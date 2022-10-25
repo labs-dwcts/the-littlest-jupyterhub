@@ -66,11 +66,6 @@ sudo wget -qO- https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyter
 sudo curl -L https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyterhub/main/bootstrap/container/rundwctstljh.sh | sh
 ```
 
-## Shell inside the running docker container
-```
-docker exec -it dwcts-tljh /bin/bash
-```
-
 ## Login
 Login admin
  - admin:password
@@ -99,6 +94,11 @@ sudo wget -qO- https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyter
 ### curl
 ```
 sudo curl -L https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyterhub/main/bootstrap/setcontainer/installdwctstljh.sh | sh
+```
+
+## Shell inside the running docker container
+```
+docker exec -it dwcts-tljh /bin/bash
 ```
 
 ## commit container

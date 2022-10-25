@@ -53,4 +53,3 @@ doInstall() {
 #
 # doInstall 2>&1 | tee -a /var/log/installtljhdocker.log
 doInstall
-docker exec -it dwcts-tljh /bin/bash
