@@ -9,7 +9,7 @@ doUserSet() {
 doSet() {
   git clone https://github.com/labs-dwcts/the-littlest-jupyterhub.git install
 
-  cd install/bootstrap/setconainer
+  cd install/bootstrap/setcontainer/
   sudo bash ./setdwctstljh.sh
 
   cd ../../
