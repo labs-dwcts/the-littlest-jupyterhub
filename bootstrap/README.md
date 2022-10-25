@@ -86,6 +86,7 @@ https://hub.docker.com/r/labsdwcts/dwcts-tljh
 # Set Container
 
 Prerequisites: install docker and add docker group
+`sudo usermod -a -G docker $USER` to add docker group
 
 ## Install dwcts-tljh
 Use `wget` or `curl`
@@ -98,8 +99,6 @@ sudo wget -qO- https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyter
 ```
 sudo curl -L https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyterhub/main/bootstrap/setcontainer/installdwctstljh.sh | sh
 ```
-
-`sudo usermod -a -G docker $USER` to add docker group
 
 ## commit container
 check `docker ps --all` and `docker images`
