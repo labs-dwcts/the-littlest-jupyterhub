@@ -45,10 +45,6 @@ doInstall() {
     jupyterlab-nvdashboard \
     nbconvert"
 
-  # docker exec -it dwcts-tljh sh -c "git clone https://github.com/labs-dwcts/the-littlest-jupyterhub temp \
-  #   && cp -fr temp/share/jupyterhub/ /opt/tljh/hub/share/ \
-  #   && rm -fr temp"
-
   docker exec -it dwcts-tljh /bin/bash
   ps
   exit
