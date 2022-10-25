@@ -6,7 +6,9 @@ https://hub.docker.com/r/labsdwcts/dwcts-tljh
 
 Prerequisites: install docker and add docker group
 
-`sudo usermod -a -G docker $USER` to add docker group
+to add docker group
+
+```sudo usermod -a -G docker $USER```
 
 ## Install dwcts-tljh
 Use `wget` or `curl`
