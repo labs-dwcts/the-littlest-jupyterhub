@@ -19,7 +19,7 @@ doInstall() {
   # installation
   curl -L https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyterhub/main/bootstrap/bootstrap.py | sudo -E python3 - --admin admin
   
-  # git clone
+  # change jupyterhub directory
   git clone https://github.com/labs-dwcts/the-littlest-jupyterhub temp
   sudo cp -fr temp/share/jupyterhub/ /opt/tljh/hub/share/
   rm -fr temp
