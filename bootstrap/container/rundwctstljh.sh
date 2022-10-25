@@ -13,4 +13,10 @@ doRun() {
     labsdwcts/dwcts-tljh
 }
 
+siteAddress() {
+  echo 'site address : http://'$(hostname -I)':12000'
+
+}
+
+siteAddress
 doRun
