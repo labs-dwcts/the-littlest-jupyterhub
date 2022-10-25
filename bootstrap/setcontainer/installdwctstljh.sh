@@ -20,7 +20,7 @@ doInstall() {
   --mount type=bind,source=$(pwd),target=/srv/src \
   tljh-systemd
 
-  docker exec -it dwcts-tljh sh -c "python3 /srv/src/bootstrap/bootstrap.py --admin admin"
+  docker exec -i dwcts-tljh sh -c "python3 /srv/src/bootstrap/bootstrap.py --admin admin"
   
   docker exec -it dwcts-tljh sh -c "tljh-config set user_environment.default_app jupyterlab && tljh-config reload hub"
   
