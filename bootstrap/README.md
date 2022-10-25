@@ -49,13 +49,11 @@ sudo curl -L https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyterhu
 ```
 
 ## Add Docker group
-dockeruserset.sh
 ```
 sudo usermod -a -G docker $USER
 ```
 
 ## Test tljh-dwcts is with Docker
-dockerrun.sh
 ```
 docker run \
   --privileged \
