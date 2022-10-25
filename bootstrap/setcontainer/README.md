@@ -30,6 +30,7 @@ Login admin
  - admin:password
 ```
 http://{Server IP}:12000
+```
 
 ## commit container
 check `docker ps --all` and `docker images`
