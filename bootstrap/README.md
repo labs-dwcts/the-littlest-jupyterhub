@@ -54,15 +54,6 @@ dockeruserset.sh
 sudo usermod -a -G docker $USER
 ```
 
-## Install dwcts-tljh
-```
-git clone https://github.com/labs-dwcts/the-littlest-jupyterhub.git install
-cd install/bootstrap/
-sudo bash ./installtljhdocker.sh
-cd ../../
-rm -fr install
-```
-
 ## Test tljh-dwcts is with Docker
 dockerrun.sh
 ```
@@ -94,4 +85,13 @@ https://hub.docker.com/r/labsdwcts/dwcts-tljh
 
 ```
 docker pull labsdwcts/dwcts-tljh
+```
+
+## Install dwcts-tljh
+```
+git clone https://github.com/labs-dwcts/the-littlest-jupyterhub.git install
+cd install/bootstrap/
+sudo bash ./installtljhdocker.sh
+cd ../../
+rm -fr install
 ```
