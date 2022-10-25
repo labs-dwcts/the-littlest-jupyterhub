@@ -63,12 +63,6 @@ cd ../../
 rm -fr install
 ```
 
-## Docker Pull
-dockerpull.sh
-```
-docker pull labsdwcts/dwcts-tljh
-```
-
 ## Test tljh-dwcts is with Docker
 dockerrun.sh
 ```
@@ -91,4 +85,13 @@ Login admin
  - admin:password
 ```
 http://{Server IP}:12000
+```
+
+
+## DockerHub Repository
+DockerHub
+https://hub.docker.com/r/labsdwcts/dwcts-tljh
+
+```
+docker pull labsdwcts/dwcts-tljh
 ```
