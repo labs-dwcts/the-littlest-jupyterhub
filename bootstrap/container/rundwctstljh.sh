@@ -11,6 +11,8 @@ doRun() {
     --publish 12000:80 \
     --mount type=bind,source=$(pwd),target=/srv/src \
     --restart="always" \
+    # --gpus all
+    # --gpus ‘”device=0,1”’
     labsdwcts/dwcts-tljh
 }
 
