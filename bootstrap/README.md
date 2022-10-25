@@ -109,7 +109,7 @@ docker commit tljh-systemd dwcts-tljh
 ```
 docker login
 ```
-input username and password
+input dockerhub `username` and `password`
 
 ```
 export DOCKER_ID_USER=“labsdwcts”
