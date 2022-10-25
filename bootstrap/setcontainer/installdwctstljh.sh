@@ -13,12 +13,13 @@ doInstall() {
   docker build -t tljh-systemd . -f integration-tests/Dockerfile
   
   docker run \
-  --privileged \
-  --detach \
-  --name=dwcts-tljh \
-  --publish 12000:80 \
-  --mount type=bind,source=$(pwd),target=/srv/src \
-  tljh-systemd
+    --privileged \
+    --detach \
+    --name=dwcts-tljh \
+    --publish 12000:80 \
+    --mount type=bind,source=$(pwd),target=/srv/src \
+    --restart="always" \
+    tljh-systemd
 
   docker exec -i dwcts-tljh sh -c "python3 /srv/src/bootstrap/bootstrap.py --admin admin"
   
