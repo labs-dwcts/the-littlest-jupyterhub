@@ -2,10 +2,6 @@
 
 set -e
 
-doUserSet() {
-  sudo usermod -aG docker $USER
-}
-
 doRun() {
   docker run \
     --privileged \
@@ -16,5 +12,4 @@ doRun() {
     labsdwcts/dwcts-tljh
 }
 
-doUserSet
-doSet
+doRun
