@@ -8,7 +8,9 @@ Prerequisites: install docker and add docker group
 
 to add docker group
 
-```sudo usermod -a -G docker $USER```
+```
+sudo usermod -a -G docker $USER
+```
 
 ## Install dwcts-tljh
 Use `wget` or `curl`
