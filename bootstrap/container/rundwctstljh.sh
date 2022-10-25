@@ -16,9 +16,5 @@ doRun() {
     labsdwcts/dwcts-tljh
 }
 
-doPull() {
-  docker pull labsdwcts/dwcts-tljh:latest
-}
-
 doUserSet
 doSet
