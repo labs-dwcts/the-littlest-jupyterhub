@@ -91,12 +91,12 @@ Prerequisites: install docker and add docker group
 Use `wget` or `curl`
 ### wget
 ```
-sudo wget -qO- https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyterhub/main/bootstrap/setcontainer/setdwctstljh.sh | sh
+sudo wget -qO- https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyterhub/main/bootstrap/setcontainer/installdwctstljh.sh | sh
 ```
 
 ### curl
 ```
-sudo curl -L https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyterhub/main/bootstrap/setcontainer/setdwctstljh.sh | sh
+sudo curl -L https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyterhub/main/bootstrap/setcontainer/installdwctstljh.sh | sh
 ```
 
 ## commit container
