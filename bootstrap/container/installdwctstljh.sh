@@ -1,9 +1,20 @@
-#!/bin/bash
+#!/bin/sh
 
-git clone https://github.com/labs-dwcts/the-littlest-jupyterhub.git install
+set -e
 
-cd install/bootstrap/
-sudo bash ./setdwctstljh.sh
+doUserSet() {
+  sudo usermod -aG docker $USER
+}
 
-cd ../../
-rm -fr install
+doSet() {
+  git clone https://github.com/labs-dwcts/the-littlest-jupyterhub.git install
+
+  cd install/bootstrap/
+  sudo bash ./setdwctstljh.sh
+
+  cd ../../
+  rm -fr install
+}
+
+doUserSet
+doSet
