@@ -22,14 +22,14 @@ doInstall() {
 
   docker exec -i dwcts-tljh sh -c "python3 /srv/src/bootstrap/bootstrap.py --admin admin"
   
-  docker exec -it dwcts-tljh sh -c "tljh-config set user_environment.default_app jupyterlab && tljh-config reload hub"
+  docker exec -i dwcts-tljh sh -c "tljh-config set user_environment.default_app jupyterlab && tljh-config reload hub"
   
   docker cp share/jupyterhub/ dwcts-tljh:/opt/tljh/hub/share
 
-  docker exec -it dwcts-tljh sh -c "export PATH=$PATH:/opt/tljh/user/bin && conda install -c conda-forge -y \
+  docker exec -i dwcts-tljh sh -c "export PATH=$PATH:/opt/tljh/user/bin && conda install -c conda-forge -y \
     jupyterlab-language-pack-ko-KR"
 
-  docker exec -it dwcts-tljh sh -c "export PATH=$PATH:/opt/tljh/user/bin && conda install -c conda-forge -y \
+  docker exec -i dwcts-tljh sh -c "export PATH=$PATH:/opt/tljh/user/bin && conda install -c conda-forge -y \
     nodejs=16 \
     jupyterlab-git \
     jupyterlab-github \
@@ -41,7 +41,7 @@ doInstall() {
     ipywidgets \
     jupyter-archive"
 
-  docker exec -it dwcts-tljh sh -c "export PATH=$PATH:/opt/tljh/user/bin && pip install \
+  docker exec -i dwcts-tljh sh -c "export PATH=$PATH:/opt/tljh/user/bin && pip install \
     jupyterlab-nvdashboard \
     nbconvert"
 
