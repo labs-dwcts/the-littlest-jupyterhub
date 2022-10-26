@@ -1,4 +1,5 @@
 # DockerHub Repository
+
 DockerHub
 https://hub.docker.com/r/labsdwcts/dwcts-tljh
 
@@ -7,56 +8,72 @@ https://hub.docker.com/r/labsdwcts/dwcts-tljh
 ## Install Docker
 
 Use `wget` or `curl`
+
 ### wget
+
 ```
 sudo wget -qO- https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyterhub/main/bootstrap/container/installdocker.sh | sh
 ```
 
 ### curl
+
 ```
 sudo curl -L https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyterhub/main/bootstrap/container/installdocker.sh | sh
 ```
 
 ## Add Docker group
+
 ```
 sudo usermod -a -G docker $USER
 newgrp docker
 ```
 
 ## Install dwcts-tljh
+
 Use `wget` or `curl`
+
 ### wget
+
 ```
 sudo wget -qO- https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyterhub/main/bootstrap/setcontainer/installdwctstljh.sh | sh
 ```
 
 ### curl
+
 ```
 sudo curl -L https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyterhub/main/bootstrap/setcontainer/installdwctstljh.sh | sh
 ```
 
 ## Shell inside the running docker container
+
 ```
 docker exec -it dwcts-tljh /bin/bash
 ```
 
 ## Test login
+
 Login admin
- - admin:password
+
+- admin:password
+
 ```
-http://{Server IP}:12000
+http://{Server IP}
 ```
 
 ## commit container
+
 check `docker ps --all` and `docker images`
+
 ```
 docker commit tljh-systemd dwcts-tljh
 ```
 
 ## push container
+
 ```
 docker login
 ```
+
 input dockerhub `username` and `password`
 
 ```
@@ -72,6 +89,7 @@ docker push $DOCKER_ID_USER/dwcts-tljh
 ```
 
 ## pull container
+
 ```
 docker pull labsdwcts/dwcts-tljh
 ```
