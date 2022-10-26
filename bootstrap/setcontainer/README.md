@@ -65,6 +65,9 @@ export DOCKER_ID_USER=labsdwcts
 
 ```
 docker tag dwcts-tljh $DOCKER_ID_USER/dwcts-tljh
+```
+
+```
 docker push $DOCKER_ID_USER/dwcts-tljh
 ```
 
