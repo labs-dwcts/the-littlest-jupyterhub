@@ -28,11 +28,6 @@ doUpdateAlways() {
   docker update --restart=always dwcts-tljh
 }
 
-doSave() {
-  docker save labsdwcts/dwcts-tljh -o dwcts-tljh.tar
-  # docker save labsdwcts/dwcts-tljh > dwcts-tljh.tar
-}
-
 # doAlwaysRun
 # doUpdateAlways
 doRun
