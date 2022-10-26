@@ -12,5 +12,5 @@ doRun() {
     --mount type=bind,source=$(pwd),target=/srv/src \
     labsdwcts/dwcts-tljh
 }
-#
+
 doRun
