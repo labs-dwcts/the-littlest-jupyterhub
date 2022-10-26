@@ -60,7 +60,7 @@ docker login
 input dockerhub `username` and `password`
 
 ```
-export DOCKER_ID_USER=“labsdwcts”
+export DOCKER_ID_USER=labsdwcts
 ```
 
 ```
