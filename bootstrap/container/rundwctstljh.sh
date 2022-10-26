@@ -8,7 +8,7 @@ doRun() {
     --privileged \
     --detach \
     --name=dwcts-tljh \
-    --publish 12000:80 \
+    --publish 80:80 \
     --mount type=bind,source=$(pwd),target=/srv/src \
     labsdwcts/dwcts-tljh
 }
@@ -18,7 +18,7 @@ doAlwaysRun() {
     --privileged \
     --detach \
     --name=dwcts-tljh \
-    --publish 12000:80 \
+    --publish 80:80 \
     --mount type=bind,source=$(pwd),target=/srv/src \
     --restart=always \
     labsdwcts/dwcts-tljh

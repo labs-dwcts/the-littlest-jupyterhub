@@ -3,32 +3,42 @@
 # Bare metal
 
 ## Prerequisites
+
 ### install build tools
+
 ```
 sudo apt-get install -y build-essential
 ```
+
 ### Node.js
+
 ```
 curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - &&\
 sudo apt-get install -y nodejs
 ```
 
 ## Installation
+
 Use `wget` or `curl`
+
 ### wget
+
 ```
 sudo wget -qO- https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyterhub/main/bootstrap/install.sh | sh
 ```
 
-
 ### curl
+
 ```
 sudo curl -L https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyterhub/main/bootstrap/install.sh | sh
 ```
 
 ## Login
+
 Login admin
- - admin:password
+
+- admin:password
+
 ```
 http://{Server IP}
 ```
@@ -38,17 +48,21 @@ http://{Server IP}
 ## Install Docker
 
 Use `wget` or `curl`
+
 ### wget
+
 ```
 sudo wget -qO- https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyterhub/main/bootstrap/container/installdocker.sh | sh
 ```
 
 ### curl
+
 ```
 sudo curl -L https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyterhub/main/bootstrap/container/installdocker.sh | sh
 ```
 
 ## Add Docker group
+
 ```
 sudo usermod -a -G docker $USER
 newgrp docker
@@ -57,19 +71,25 @@ newgrp docker
 ## Run dwcts-tljh
 
 Use `wget` or `curl`
+
 ### wget
+
 ```
 sudo wget -qO- https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyterhub/main/bootstrap/container/rundwctstljh.sh | sh
 ```
 
 ### curl
+
 ```
 sudo curl -L https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyterhub/main/bootstrap/container/rundwctstljh.sh | sh
 ```
 
 ## Login
+
 Login admin
- - admin:password
+
+- admin:password
+
 ```
-http://{Server IP}:12000
+http://{Server IP}
 ```
