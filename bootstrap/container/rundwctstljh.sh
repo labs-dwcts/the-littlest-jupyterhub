@@ -13,7 +13,7 @@ doRun() {
     labsdwcts/dwcts-tljh
 }
 
-doAlwaysRun () {
+doAlwaysRun() {
   docker run \
     --privileged \
     --detach \
@@ -23,5 +23,16 @@ doAlwaysRun () {
     --restart=always \
     labsdwcts/dwcts-tljh
 }
+
+doUpdateAlways() {
+  docker update --restart=always labsdwcts/dwcts-tljh
+}
+
+doSave() {
+  docker save labsdwcts/dwcts-tljh > dwcts-tljh.tar
+  # docker save labsdwcts/dwcts-tljh -o dwcts-tljh.tar
+}
+
 # doAlwaysRun
+# doUpdateAlways
 doRun
