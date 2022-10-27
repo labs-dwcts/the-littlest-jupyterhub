@@ -9,7 +9,7 @@ doSetDirectory() {
   # create a share directory
   sudo mkdir /srv/data /srv/setenv /srv/scratch
 
-  sudo ln -s /srv/data /etc/skel/data  
+  sudo ln -s /srv/data /etc/skel/data
 
   # change group ownership and default permissions to use group
   sudo groupadd jupyterhub-users
