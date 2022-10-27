@@ -38,6 +38,10 @@ doInstall() {
   # change jupyterhub directory
   git clone https://github.com/labs-dwcts/the-littlest-jupyterhub temp
   sudo cp -fr temp/share/jupyterhub/ /opt/tljh/hub/share/
+  
+  # add conda environment
+  sudo cp -fr temp/bootsrap/envlist /srv/setenv
+  
   rm -fr temp
 
   # settings
