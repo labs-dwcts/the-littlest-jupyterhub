@@ -40,7 +40,7 @@ doInstall() {
   sudo cp -fr temp/share/jupyterhub/ /opt/tljh/hub/share/
   
   # add conda environment
-  sudo cp -fr temp/bootsrap/envlist /srv/setenv
+  sudo cp -fr temp/bootstrap/envlist /srv/setenv
   
   rm -fr temp
 
