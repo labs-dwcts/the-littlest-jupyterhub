@@ -16,7 +16,7 @@ doInstall() {
     --privileged \
     --detach \
     --name=dwcts-tljh \
-    --publish 80:80 \
+    --publish 12000:80 \
     --mount type=bind,source=$(pwd),target=/srv/src \
     tljh-systemd
 
