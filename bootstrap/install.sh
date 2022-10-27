@@ -5,10 +5,10 @@ set -e
 #
 # install jupyterHub (bare metal)
 #
-doSetDirectory(){
+doSetDirectory() {
   # create a share directory
   sudo mkdir /srv/data /srv/setenv /srv/scratch
-  
+
   sudo ln -s /srv/data /etc/skel/data
   sudo ln -s /srv/setenv /etc/skel/setenv
 
@@ -26,7 +26,6 @@ doSetDirectory(){
 doInstall() {
   # update
   sudo apt update
-  # sudo apt upgrade -y
   
   # prerequisites
   sudo apt install -y build-essential
