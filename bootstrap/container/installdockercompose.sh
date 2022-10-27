@@ -3,7 +3,7 @@
 set -e
 
 #
-# Install Docker compose (docker)
+# Install Docker Compose v2
 #
 
 doInstall() {
