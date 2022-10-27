@@ -52,13 +52,13 @@ Use `wget` or `curl`
 ### wget
 
 ```
-sudo wget -qO- https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyterhub/main/bootstrap/container/installdocker.sh | sh
+sudo wget -qO- https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyterhub/main/bootstrap/container/installdocker.sh | sh && sudo systemctl --now enable docker
 ```
 
 ### curl
 
 ```
-sudo curl -L https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyterhub/main/bootstrap/container/installdocker.sh | sh
+sudo curl -L https://raw.githubusercontent.com/labs-dwcts/the-littlest-jupyterhub/main/bootstrap/container/installdocker.sh | sh && sudo systemctl --now enable docker
 ```
 
 ## Add Docker group
