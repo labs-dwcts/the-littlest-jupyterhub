@@ -5,6 +5,20 @@ set -e
 #
 # install jupyterHub (bare metal)
 #
+doSetDirectory(){
+  # create a share directory
+  sudo mkdir /srv/data /srv/setenv /srv/scratch \
+    && sudo ln -s /srv/data /etc/skel/data \
+    && sudo ln -s /srv/setenv /etc/skel/setenv
+
+  # change group ownership and default permissions to use group
+  sudo chown root:jupyterhub-users /srv/scratch \
+    && sudo chmod 777 /srv/scratch \
+    && sudo chmod g+s /srv/scratch
+
+  # Create a symbolic link to the scratch folder in users home directories
+  sudo ln -s /srv/scratch /etc/skel/scratch
+}
 
 doInstall() {
   # update
@@ -59,4 +73,5 @@ doInstall() {
 #
 # 
 #
+doSetDirectory
 doInstall
