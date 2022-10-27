@@ -7,7 +7,7 @@ set -e
 #
 doSetDirectory(){
   # create a share directory
-  sudo mkdir /srv/data /srv/setenv /srv/scratch /srv/scratch \
+  sudo mkdir /srv/data /srv/setenv /srv/scratch \
     && sudo ln -s /srv/data /etc/skel/data \
     && sudo ln -s /srv/setenv /etc/skel/setenv
 
