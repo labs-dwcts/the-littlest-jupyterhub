@@ -13,5 +13,11 @@ createEnv() {
   # conda environment list
   /opt/tljh/user/bin/conda env list
 }
+addEnv() {
+  /opt/tljh/user/bin/python -m ipykernel install --user --name "tf-2.7" --display-name="tf-2.7"
+  /opt/tljh/user/bin/python -m ipykernel install --user --name "pt-1.12.1" --display-name="pt-1.12.1"
+  /opt/tljh/user/bin/python -m ipykernel install --user --name "sklearn-1.1.2" --display-name="sklearn-1.1.2"
+}
 
 createEnv
+addEnv
