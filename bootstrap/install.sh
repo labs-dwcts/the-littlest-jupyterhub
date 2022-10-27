@@ -9,18 +9,19 @@ doSetDirectory() {
   # create a share directory
   sudo mkdir /srv/data /srv/setenv /srv/scratch
 
-  sudo ln -s /srv/data /etc/skel/data
-  sudo ln -s /srv/setenv /etc/skel/setenv
+  sudo ln -s /srv/data /etc/skel/data  
 
   # change group ownership and default permissions to use group
   sudo groupadd jupyterhub-users
   sudo chown root:jupyterhub-users /srv/scratch
 
-  sudo chmod 777 /srv/scratch 
-  sudo chmod g+s /srv/scratch
+  sudo chmod 777 /srv/scratch /etc/skel/setenv
+  sudo chmod 755 /etc/skel/setenv
+  sudo chmod g+s /srv/scratch /etc/skel/setenv
 
   # create a symbolic link to the scratch folder in users home directories
   sudo ln -s /srv/scratch /etc/skel/scratch
+  sudo ln -s /srv/setenv /etc/skel/setenv
 }
 
 doInstall() {
