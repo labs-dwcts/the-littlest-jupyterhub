@@ -15,9 +15,9 @@ doSetDirectory() {
   sudo groupadd jupyterhub-users
   sudo chown root:jupyterhub-users /srv/scratch
 
-  sudo chmod 777 /srv/scratch /etc/skel/setenv
-  sudo chmod 755 /etc/skel/setenv
-  sudo chmod g+s /srv/scratch /etc/skel/setenv
+  sudo chmod 777 /srv/scratch
+  sudo chmod 755 /srv/setenv
+  sudo chmod g+s /srv/scratch /srv/setenv
 
   # create a symbolic link to the scratch folder in users home directories
   sudo ln -s /srv/scratch /etc/skel/scratch
