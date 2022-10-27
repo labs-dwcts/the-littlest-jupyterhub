@@ -13,7 +13,7 @@ doSetDirectory() {
 
   # change group ownership and default permissions to use group
   sudo groupadd jupyterhub-users
-  sudo chown root:jupyterhub-users /srv/scratch
+  sudo chown root:jupyterhub-users /srv/scratch /src/setenv
 
   sudo chmod 777 /srv/scratch
   sudo chmod 755 /srv/setenv
