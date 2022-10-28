@@ -6,22 +6,56 @@ set -e
 # install jupyterHub (bare metal)
 #
 doSetDirectory() {
-  # create a share directory
-  sudo mkdir /srv/data /srv/setenv /srv/scratch
-
-  sudo ln -s /srv/data /etc/skel/data
+  data="/srv/data"
+  setenv="/srv/setenv"
+  scratch="/srv/scratch"
+  skeldata="/etc/skel/data"
+  skelsetenv="/etc/skel/setenv"
+  skelscratch="/etc/skel/scratch"
+  jupyterhubusers="jupyterhub-users"
 
   # change group ownership and default permissions to use group
-  sudo groupadd jupyterhub-users
-  sudo chown root:jupyterhub-users /srv/scratch /srv/setenv
+  if [ ! $(getent group "${jupyterhubusers}") ]
+    then
+      sudo groupadd jupyterhub-users
+  else
+    echo "${jupyterhubusers} group exists."
+  fi
+
+  # create a share directory
+  for value in $data $setenv $scratch
+    do
+      if [ ! -d "${value}" ]
+        then
+          mkdir -p "${value}"
+      else
+          echo "Directory already exists."
+      fi
+  done
+  
+
+  # create a symlink $data, $setenv, $scratch to /etc/skel directory
+  for value in $skeldata $skelsetenv $skelscratch
+    do
+      if [ ! -L "${value}" ]
+        then
+          ln -s "${data}" "${value}"
+      elif [ ! -L "${value}" ]
+        then
+          ln -s "${setenv}" "${value}"
+      elif [ ! -L "${value}" ]
+        then
+          ln -s "${scratch}" "${value}"
+      else
+          echo "Symlink already exists."
+      fi
+  done
+  
+  sudo chown root:jupyterhub-users "${scratch}" "${setenv}"
 
   sudo chmod 777 /srv/scratch
   sudo chmod 755 /srv/setenv
   sudo chmod g+s /srv/scratch /srv/setenv
-
-  # create a symbolic link to the scratch folder in users home directories
-  sudo ln -s /srv/scratch /etc/skel/scratch
-  sudo ln -s /srv/setenv /etc/skel/setenv
 }
 
 doInstall() {
