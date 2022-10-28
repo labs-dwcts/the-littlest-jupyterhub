@@ -34,21 +34,34 @@ doSetDirectory() {
   done
   
   # create a symlink $data, $setenv, $scratch
+  # if [ ! -L "${skeldata}" ]
+  #   then
+  #     sudo ln -s "${data}" "${skeldata}"
+  # fi
+  
+  # if [ ! -L "${skelsetenv}" ]
+  #   then
+  #     sudo ln -s "${setenv}" "${skelsetenv}"
+  # fi
+
+  # if [ ! -L "${skelscratch}" ]
+  #   then
+  #     sudo ln -s "${scratch}" "${skelscratch}"
+  # fi
+
   if [ ! -L "${skeldata}" ]
     then
       sudo ln -s "${data}" "${skeldata}"
-  fi
-  
-  if [ ! -L "${skelsetenv}" ]
+  elif [ ! -L "${skelsetenv}" ]
     then
       sudo ln -s "${setenv}" "${skelsetenv}"
-  fi
-
-  if [ ! -L "${skelscratch}" ]
+  elif [ ! -L "${skelscratch}" ]
     then
       sudo ln -s "${scratch}" "${skelscratch}"
+  else
+    echo "Symlinks already exist."
   fi
-  
+
   # update permissions
   sudo chown -R root:jupyterhub-users "${scratch}" "${setenv}"
   sudo chmod 777 "${scratch}"
