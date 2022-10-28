@@ -34,18 +34,20 @@ doSetDirectory() {
   done
   
   # create a symlink $data, $setenv, $scratch
-  for value in $skeldata $skelsetenv $skelscratch
-    do
-     for value2 in $data $setenv $scratch
-       do
-         if [ ! -L "${value}" ]
-           then
-             sudo ln -s "${value2}" "${value}"
-         else
-           echo ""
-         fi
-     done
-  done
+  if [ ! -L "${skeldata}" ]
+    then
+      sudo ln -s "${data}" "${skeldata}"
+  fi
+  
+  if [ ! -L "${skelsetenv}" ]
+    then
+      sudo ln -s "${setenv}" "${skelsetenv}"
+  fi
+
+  if [ ! -L "${skelscratch}" ]
+    then
+      sudo ln -s "${scratch}" "${skelscratch}"
+  fi
   
   # update permissions
   sudo chown -R root:jupyterhub-users "${scratch}" "${setenv}"
