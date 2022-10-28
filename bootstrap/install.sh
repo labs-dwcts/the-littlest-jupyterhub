@@ -34,8 +34,6 @@ doSetDirectory() {
   done
   
   # create a symlink $data, $setenv, $scratch
-  # to /etc/skel
-  # symlink exists in /etc/skel/data, /etc/skel/setenv, scratch  check if it exists
   for value in $skeldata $skelsetenv $skelscratch
     do
      for value2 in $data $setenv $scratch
@@ -50,7 +48,7 @@ doSetDirectory() {
   done
   
   # update permissions
-  sudo chown root:jupyterhub-users "${scratch}" "${setenv}"
+  sudo chown -R root:jupyterhub-users "${scratch}" "${setenv}"
   sudo chmod 777 "${scratch}"
   sudo chmod 755 "${setenv}"
   sudo chmod g+s "${scratch}" "${setenv}"
