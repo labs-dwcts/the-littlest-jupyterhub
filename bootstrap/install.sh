@@ -43,6 +43,7 @@ doSetDirectory() {
              sudo ln -s "${value2}" "${value}"
          else
            echo "Symlink already exists."
+           exit 1
          fi
      done
   done
