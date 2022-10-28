@@ -53,9 +53,13 @@ doSetDirectory() {
   
   sudo chown root:jupyterhub-users "${scratch}" "${setenv}"
 
-  sudo chmod 777 /srv/scratch
-  sudo chmod 755 /srv/setenv
-  sudo chmod g+s /srv/scratch /srv/setenv
+  # sudo chmod 777 /srv/scratch
+  # sudo chmod 755 /srv/setenv
+  # sudo chmod g+s /srv/scratch /srv/setenv
+
+  sudo chmod 777 "${scratch}"
+  sudo chmod 755 "${setenv}"
+  sudo chmod g+s "${scratch}" "${setenv}"
 }
 
 doInstall() {
