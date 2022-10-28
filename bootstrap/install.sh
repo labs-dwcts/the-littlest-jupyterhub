@@ -39,13 +39,13 @@ doSetDirectory() {
     do
       if [ ! -L "${value}" ]
         then
-          ln -s "${data}" "${value}"
+          sudo ln -s "${data}" "${value}"
       elif [ ! -L "${value}" ]
         then
-          ln -s "${setenv}" "${value}"
+          sudo ln -s "${setenv}" "${value}"
       elif [ ! -L "${value}" ]
         then
-          ln -s "${scratch}" "${value}"
+          sudo ln -s "${scratch}" "${value}"
       else
           echo "Symlink already exists."
       fi
