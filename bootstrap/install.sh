@@ -27,7 +27,7 @@ doSetDirectory() {
     do
       if [ ! -d "${value}" ]
         then
-          mkdir -p "${value}"
+          sudo mkdir -p "${value}"
       else
           echo "Directory already exists."
       fi
