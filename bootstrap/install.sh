@@ -35,21 +35,18 @@ doSetDirectory() {
   
 
   # create a symlink $data, $setenv, $scratch to /etc/skel directory
-  for value in $skeldata $skelsetenv $skelscratch
-    do
-      if [ ! -L "${value}" ]
-        then
-          sudo ln -s "${data}" "${value}"
-      elif [ ! -L "${value}" ]
-        then
-          sudo ln -s "${setenv}" "${value}"
-      elif [ ! -L "${value}" ]
-        then
-          sudo ln -s "${scratch}" "${value}"
-      else
-          echo "Symlink already exists."
-      fi
-  done
+  if [ ! -L "${skeldata}" ]
+    then
+      sudo ln -s "${data}" "${skeldata}"
+  elif [ ! -L "${skelsetenv}" ]
+    then
+      sudo ln -s "${setenv}" "${skelsetenv}"
+  elif [ ! -L "${skelscratch}" ]
+    then
+      sudo ln -s "${scratch}" "${skelscratch}"
+  else
+    echo "Symlink already exists."
+  fi
   
   sudo chown root:jupyterhub-users "${scratch}" "${setenv}"
 
