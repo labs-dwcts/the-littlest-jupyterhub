@@ -34,32 +34,19 @@ doSetDirectory() {
   done
   
   # create a symlink $data, $setenv, $scratch
-  # if [ ! -L "${skeldata}" ]
-  #   then
-  #     sudo ln -s "${data}" "${skeldata}"
-  # fi
-  
-  # if [ ! -L "${skelsetenv}" ]
-  #   then
-  #     sudo ln -s "${setenv}" "${skelsetenv}"
-  # fi
-
-  # if [ ! -L "${skelscratch}" ]
-  #   then
-  #     sudo ln -s "${scratch}" "${skelscratch}"
-  # fi
-
   if [ ! -L "${skeldata}" ]
     then
       sudo ln -s "${data}" "${skeldata}"
-  elif [ ! -L "${skelsetenv}" ]
+  fi
+  
+  if [ ! -L "${skelsetenv}" ]
     then
       sudo ln -s "${setenv}" "${skelsetenv}"
-  elif [ ! -L "${skelscratch}" ]
+  fi
+
+  if [ ! -L "${skelscratch}" ]
     then
       sudo ln -s "${scratch}" "${skelscratch}"
-  else
-    echo "Symlinks already exist."
   fi
 
   # update permissions
