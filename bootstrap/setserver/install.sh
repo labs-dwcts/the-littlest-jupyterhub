@@ -25,7 +25,7 @@ sudo apt-get install build-essential g++ freeglut3-dev build-essential libx11-de
 
 
 # first get the PPA repository driver
-sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo add-apt-repository ppa:graphics-drivers/ppa -y
 release="ubuntu"$(lsb_release -sr | sed -e "s/\.//g")
 sudo apt-key del 7fa2af80
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-keyring_1.0-1_all.deb
