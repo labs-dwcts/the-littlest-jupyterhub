@@ -21,7 +21,7 @@ sudo apt-get upgrade -y
 
 
 # install other import packages
-sudo apt-get install g++ freeglut3-dev build-essential libx11-dev libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev gnupg2 curl ca-certificates -y
+sudo apt-get install build-essential g++ freeglut3-dev build-essential libx11-dev libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev gnupg2 curl ca-certificates -y
 
 
 # first get the PPA repository driver
