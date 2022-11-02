@@ -78,4 +78,4 @@ echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
 # source ~/.bashrc
 /usr/local/go/bin/go version
 
-echo 'reboot & test'
+echo 'Please reboot to proceed with the test.'
