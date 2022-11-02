@@ -38,10 +38,18 @@ source ~/.bashrc
 sudo ldconfig
 
 
-# cudnn 8.1
+# cudnn 8.1.1
 # https://developer.nvidia.com/rdp/cudnn-archive
 # https://developer.nvidia.com/rdp/cudnn-archive#a-collapse811-111
 # wget https://developer.nvidia.com/compute/machine-learning/cudnn/secure/8.1.1.33/11.2_20210301/cudnn-11.2-linux-x64-v8.1.1.33.tgz
+# or
+# google drive
+# https://drive.google.com/file/d/1-1TFu6U7yIXYPU5JEuB9bI4LOTyfKCz1/view?usp=sharing
+FILEID="1-1TFu6U7yIXYPU5JEuB9bI4LOTyfKCz1"
+FILENAME="cudnn-11.2-linux-x64-v8.1.1.33.tgz"
+curl -sc ~/cookie.txt "https://drive.google.com/uc?export=download&id=${FILEID}" > /dev/null
+curl -Lb ~/cookie.txt "https://drive.google.com/uc?export=download&confirm=`awk '/_warning_/ {print $NF}' ~/cookie.txt`&id=${FILEID}" -o ${FILENAME}
+
 tar -zxvf cudnn-11.2-linux-x64-v8.1.1.33.tgz
 sudo cp -P cuda/include/cudnn.h /usr/local/cuda-11.2/include
 sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda-11.2/lib64/
