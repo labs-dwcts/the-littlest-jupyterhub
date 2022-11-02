@@ -49,7 +49,7 @@ FILEID="1-1TFu6U7yIXYPU5JEuB9bI4LOTyfKCz1"
 FILENAME="cudnn-11.2-linux-x64-v8.1.1.33.tgz"
 curl -sc ~/cookie.txt "https://drive.google.com/uc?export=download&id=${FILEID}" > /dev/null
 curl -Lb ~/cookie.txt "https://drive.google.com/uc?export=download&confirm=`awk '/_warning_/ {print $NF}' ~/cookie.txt`&id=${FILEID}" -o ${FILENAME}
-
+rm -fr cookie.txt
 # cudnn-11.2-linux-x64-v8.1.1.33.tgz
 # md5sum
 # 5078ca954fcaef547aaf466555f8c4ca
