@@ -23,13 +23,14 @@ sudo apt install build-essential -y
 
 # nvidia driver 460.91.03
 wget https://us.download.nvidia.com/XFree86/Linux-x86_64/460.91.03/NVIDIA-Linux-x86_64-460.91.03.run
-sudo sh NVIDIA-Linux-x86_64-460.91.03.run --ui=none --no-questions --accept-license --disable-nouveau --no-cc-version-check --install-libglvnd
+sudo sh NVIDIA-Linux-x86_64-460.91.03.run --ui=none --no-questions --accept-license --no-x-check
+# --disable-nouveau --no-cc-version-check --install-libglvnd
 
 
 # cuda 11.2
 wget https://developer.download.nvidia.com/compute/cuda/11.2.0/local_installers/cuda_11.2.0_460.27.04_linux.run
-sudo sh cuda_11.2.0_460.27.04_linux.run --silent --toolkit --samples --override --override-driver-check --toolkitpath=/usr/local/cuda-11.2 --samplespath=/usr/local/cuda-11.2/samples
-
+# sudo sh cuda_11.2.0_460.27.04_linux.run --silent --toolkit --override --override-driver-check --toolkitpath=/usr/local/cuda-11.2
+sudo sh cuda_11.2.0_460.27.04_linux.run --toolkit --toolkitpath=/usr/local/cuda-11.2 --override-driver-check
 
 # cuda path
 echo 'export PATH=/usr/local/cuda-11.2/bin:$PATH' >> ~/.bashrc
@@ -78,6 +79,10 @@ echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
 # source ~/.bashrc
 /usr/local/go/bin/go version
 
+
+# network wait-online off
+sudo systemctl disable systemd-networkd-wait-online.service
+sudo systemctl mask systemd-networkd-wait-online.service
 
 # end
 echo 'Please reboot to proceed with the test.'
