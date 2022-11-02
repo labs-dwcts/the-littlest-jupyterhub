@@ -54,7 +54,7 @@ sudo systemctl set-default multi-user.target
 
 
 # check
-nvidia-smi && nvcc -V && cat /proc/driver/nvidia/version && cat /proc/driver/nvidia/gpus/0000\:c1\:00.0/information
+nvidia-smi && /usr/local/cuda-11.2/bin/nvcc -V && cat /proc/driver/nvidia/version && cat /proc/driver/nvidia/gpus/0000\:c1\:00.0/information
 
 
 # install golang
