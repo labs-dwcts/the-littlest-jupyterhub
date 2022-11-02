@@ -34,11 +34,11 @@ sudo sh cuda_11.2.0_460.27.04_linux.run --silent --toolkit --samples --override 
 # cuda path
 echo 'export PATH=/usr/local/cuda-11.2/bin:$PATH' >> ~/.bashrc
 echo 'export LD_LIBRARY_PATH=/usr/local/cuda-11.2/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
-source ~/.bashrc
+# source ~/.bashrc
 sudo ldconfig
 
 
-# cudnn 8.1.1
+# cudnn 8.1.1.33
 # https://developer.nvidia.com/rdp/cudnn-archive
 # https://developer.nvidia.com/rdp/cudnn-archive#a-collapse811-111
 # wget https://developer.nvidia.com/compute/machine-learning/cudnn/secure/8.1.1.33/11.2_20210301/cudnn-11.2-linux-x64-v8.1.1.33.tgz
@@ -68,5 +68,7 @@ nvidia-smi && /usr/local/cuda-11.2/bin/nvcc -V && cat /proc/driver/nvidia/versio
 wget https://go.dev/dl/go1.19.3.linux-amd64.tar.gz
 sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.19.3.linux-amd64.tar.gz
 echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
-source ~/.bashrc
+# source ~/.bashrc
 go version
+
+echo 'source ~/.bashrc'
