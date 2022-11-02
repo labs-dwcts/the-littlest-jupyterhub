@@ -1,6 +1,5 @@
 #!/bin/bash
 ## OS : Ubuntu 20.04
-## Author : labs.dwcts
 
 # nvidia remove 
 sudo apt-get purge nvidia* -y
@@ -55,8 +54,7 @@ sudo systemctl set-default multi-user.target
 
 
 # check
-nvidia-smi && nvcc -V
-cat /proc/driver/nvidia/version && cat /proc/driver/nvidia/gpus/0000\:c1\:00.0/information
+nvidia-smi && nvcc -V && cat /proc/driver/nvidia/version && cat /proc/driver/nvidia/gpus/0000\:c1\:00.0/information
 
 
 # install golang
