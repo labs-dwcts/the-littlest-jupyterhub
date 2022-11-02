@@ -30,7 +30,7 @@ sudo sh NVIDIA-Linux-x86_64-460.91.03.run --ui=none --no-questions --accept-lice
 # cuda 11.2
 wget https://developer.download.nvidia.com/compute/cuda/11.2.0/local_installers/cuda_11.2.0_460.27.04_linux.run
 # sudo sh cuda_11.2.0_460.27.04_linux.run --silent --toolkit --override --override-driver-check --toolkitpath=/usr/local/cuda-11.2
-sudo sh cuda_11.2.0_460.27.04_linux.run --toolkit --toolkitpath=/usr/local/cuda-11.2 --override-driver-check
+sudo sh cuda_11.2.0_460.27.04_linux.run --silent --toolkit --toolkitpath=/usr/local/cuda-11.2 --override-driver-check
 
 # cuda path
 echo 'export PATH=/usr/local/cuda-11.2/bin:$PATH' >> ~/.bashrc
