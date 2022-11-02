@@ -50,6 +50,13 @@ FILENAME="cudnn-11.2-linux-x64-v8.1.1.33.tgz"
 curl -sc ~/cookie.txt "https://drive.google.com/uc?export=download&id=${FILEID}" > /dev/null
 curl -Lb ~/cookie.txt "https://drive.google.com/uc?export=download&confirm=`awk '/_warning_/ {print $NF}' ~/cookie.txt`&id=${FILEID}" -o ${FILENAME}
 
+# cudnn-11.2-linux-x64-v8.1.1.33.tgz
+# md5sum
+# 5078ca954fcaef547aaf466555f8c4ca
+#
+# sha1sum
+# 0928a491bf7abb4eee975138cec6b3249a87e3d1
+
 tar -zxvf cudnn-11.2-linux-x64-v8.1.1.33.tgz
 sudo cp -P cuda/include/cudnn.h /usr/local/cuda-11.2/include
 sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda-11.2/lib64/
