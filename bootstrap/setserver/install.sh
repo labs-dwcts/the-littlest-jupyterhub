@@ -1,6 +1,7 @@
 #!/bin/bash
 ## OS : Ubuntu 20.04
 
+
 # nvidia remove 
 sudo apt-get purge nvidia* -y
 sudo apt remove nvidia-* -y
@@ -22,13 +23,11 @@ sudo apt install build-essential -y
 
 # nvidia driver 460.91.03
 wget https://us.download.nvidia.com/XFree86/Linux-x86_64/460.91.03/NVIDIA-Linux-x86_64-460.91.03.run
-#sudo sh NVIDIA-Linux-x86_64-460.91.03.run
 sudo sh NVIDIA-Linux-x86_64-460.91.03.run --ui=none --no-questions --accept-license --disable-nouveau --no-cc-version-check --install-libglvnd
 
 
 # cuda 11.2
 wget https://developer.download.nvidia.com/compute/cuda/11.2.0/local_installers/cuda_11.2.0_460.27.04_linux.run
-# sudo sh cuda_11.2.0_460.27.04_linux.run
 sudo sh cuda_11.2.0_460.27.04_linux.run --silent --toolkit --samples --override --override-driver-check --toolkitpath=/usr/local/cuda-11.2 --samplespath=/usr/local/cuda-11.2/samples
 
 
