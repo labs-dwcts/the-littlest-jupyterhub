@@ -78,4 +78,4 @@ echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
 # source ~/.bashrc
 go version
 
-echo 'source ~/.bashrc'
+echo 'reboot & test'
