@@ -18,7 +18,7 @@ sudo apt remove unattended-upgrades -y
 
 
 # install development tools
-sudo apt install build-essential dkms -y
+sudo apt install build-essential dkms libnvidia-common-460 -y
 
 
 # nvidia driver 460.91.03
