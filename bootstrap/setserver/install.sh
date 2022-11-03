@@ -79,6 +79,7 @@ sync
 nvidia-smi && /usr/local/cuda-11.2/bin/nvcc -V && cat /proc/driver/nvidia/version && cat /proc/driver/nvidia/gpus/0000\:c1\:00.0/information
 
 
+# Optional
 # install golang
 wget https://go.dev/dl/go1.19.3.linux-amd64.tar.gz
 sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.19.3.linux-amd64.tar.gz
@@ -91,6 +92,7 @@ export PATH=$PATH:/usr/local/go/bin
 # network wait-online off
 sudo systemctl disable systemd-networkd-wait-online.service
 sudo systemctl mask systemd-networkd-wait-online.service
+
 
 # end
 echo 'Please reboot to proceed with the test.'
