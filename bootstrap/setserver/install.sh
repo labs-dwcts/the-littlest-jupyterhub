@@ -18,7 +18,7 @@ sudo apt remove unattended-upgrades -y
 
 
 # install development tools
-sudo apt install build-essential -y
+sudo apt install build-essential dkms -y
 
 
 # nvidia driver 460.91.03
@@ -33,6 +33,12 @@ wget https://developer.download.nvidia.com/compute/cuda/11.2.0/local_installers/
 sudo sh cuda_11.2.0_460.27.04_linux.run --silent --toolkit --toolkitpath=/usr/local/cuda-11.2 --override-driver-check
 
 # cuda path
+echo 'export PATH=/usr/local/cuda-11.2/bin${PATH:+:${PATH}}' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH=/usr/local/cuda-11.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}' >> ~/.bashrc
+export PATH=$(tr -d $'\n ' <<< "/usr/local/cuda-11.2/bin:$PATH")
+export LD_LIBRARY_PATH=$(tr -d $'\n ' <<< "/usr/local/cuda-11.2/lib64")
+
+
 echo 'export PATH=/usr/local/cuda-11.2/bin:$PATH' >> ~/.bashrc
 echo 'export LD_LIBRARY_PATH=/usr/local/cuda-11.2/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
 # source ~/.bashrc
@@ -68,6 +74,11 @@ sudo chmod a+r /usr/local/cuda-11.2/lib64/libcudnn*
 sudo systemctl set-default multi-user.target
 
 
+# nvidia kernel module with dkms
+sudo dkms install nvidia/460.91.03 -k $(uname -r)
+sudo update-initramfs -u
+sync
+
 # check
 nvidia-smi && /usr/local/cuda-11.2/bin/nvcc -V && cat /proc/driver/nvidia/version && cat /proc/driver/nvidia/gpus/0000\:c1\:00.0/information
 
@@ -76,6 +87,7 @@ nvidia-smi && /usr/local/cuda-11.2/bin/nvcc -V && cat /proc/driver/nvidia/versio
 wget https://go.dev/dl/go1.19.3.linux-amd64.tar.gz
 sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.19.3.linux-amd64.tar.gz
 echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
+export PATH=$(tr -d $'\n ' <<< "/usr/local/go/bin:$PATH")
 # source ~/.bashrc
 /usr/local/go/bin/go version
 
