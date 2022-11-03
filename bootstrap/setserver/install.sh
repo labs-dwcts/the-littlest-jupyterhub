@@ -33,14 +33,10 @@ wget https://developer.download.nvidia.com/compute/cuda/11.2.0/local_installers/
 sudo sh cuda_11.2.0_460.27.04_linux.run --silent --toolkit --toolkitpath=/usr/local/cuda-11.2 --override-driver-check
 
 # cuda path
-echo 'export PATH=/usr/local/cuda-11.2/bin${PATH:+:${PATH}}' >> ~/.bashrc
-echo 'export LD_LIBRARY_PATH=/usr/local/cuda-11.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}' >> ~/.bashrc
-export PATH=$(tr -d $'\n ' <<< "/usr/local/cuda-11.2/bin:$PATH")
-export LD_LIBRARY_PATH=$(tr -d $'\n ' <<< "/usr/local/cuda-11.2/lib64")
-
-
-echo 'export PATH=/usr/local/cuda-11.2/bin:$PATH' >> ~/.bashrc
-echo 'export LD_LIBRARY_PATH=/usr/local/cuda-11.2/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
+export PATH=/usr/local/cuda-11.2/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-11.2/lib64:$LD_LIBRARY_PATH
+# echo 'export PATH=/usr/local/cuda-11.2/bin:$PATH' >> ~/.bashrc
+# echo 'export LD_LIBRARY_PATH=/usr/local/cuda-11.2/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
 # source ~/.bashrc
 sudo ldconfig
 
@@ -86,8 +82,8 @@ nvidia-smi && /usr/local/cuda-11.2/bin/nvcc -V && cat /proc/driver/nvidia/versio
 # install golang
 wget https://go.dev/dl/go1.19.3.linux-amd64.tar.gz
 sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.19.3.linux-amd64.tar.gz
-echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
-export PATH=$(tr -d $'\n ' <<< "/usr/local/go/bin:$PATH")
+export PATH=$PATH:/usr/local/go/bin
+# echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
 # source ~/.bashrc
 /usr/local/go/bin/go version
 
