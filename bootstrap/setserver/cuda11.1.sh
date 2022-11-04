@@ -1,6 +1,16 @@
 # cuda 11.1, cudnn 8.1.1.33
 
 
+# nvidia driver 455.45.01 - cuda 11.1 
+# apt install build-essential libglvnd-dev pkg-config
+# wget https://us.download.nvidia.com/XFree86/Linux-x86_64/455.45.01/NVIDIA-Linux-x86_64-455.45.01.run
+
+
+# runfile (local)
+# wget https://developer.download.nvidia.com/compute/cuda/11.1.0/local_installers/cuda_11.1.0_455.23.05_linux.run
+# sudo sh cuda_11.1.0_455.23.05_linux.run
+
+
 sudo add-apt-repository ppa:graphics-drivers/ppa -y
 sudo bash -c "echo blacklist nouveau > /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
 sudo bash -c "echo options nouveau modeset=0 >> /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
@@ -24,11 +34,11 @@ sudo cp cuda/include/cudnn.h /usr/local/cuda/include
 sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
 sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
 
-echo 'export LD_LIBRARY_PATH=/usr/local/cuda-11.2/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH=/usr/local/cuda-11.1/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
 echo 'export LD_LIBRARY_PATH=/usr/lib/cuda/include:$LD_LIBRARY_PATH' >> ~/.bashrc
 echo 'export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
 echo 'export LD_LIBRARY_PATH=/usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
-echo 'export PATH=/usr/local/cuda-11.2/bin:$PATH' >> ~/.bashrc
+echo 'export PATH=/usr/local/cuda-11.1/bin:$PATH' >> ~/.bashrc
 echo 'export PATH=/usr/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
 
