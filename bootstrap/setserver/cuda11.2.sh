@@ -1,4 +1,4 @@
-# cuda 11.1
+# cuda 11.2, cudnn 8.1.1.33
 
 
 sudo add-apt-repository ppa:graphics-drivers/ppa -y
