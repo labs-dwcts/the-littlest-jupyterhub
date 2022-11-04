@@ -1,4 +1,4 @@
-# cuda 11.1, cudnn 8.1.1.33
+# nvidia driver 455.45.01, cuda 11.1, cudnn 8.1.1.33
 
 
 # nvidia driver 455.45.01 - cuda 11.1 
@@ -9,6 +9,17 @@
 # runfile (local)
 # wget https://developer.download.nvidia.com/compute/cuda/11.1.0/local_installers/cuda_11.1.0_455.23.05_linux.run
 # sudo sh cuda_11.1.0_455.23.05_linux.run
+
+# cudnn link
+sudo ln -sf /usr/local/cuda-11.1/targets/x86_64-linux/lib/libcudnn_adv_train.so.8.1.1 /usr/local/cuda-11.1/targets/x86_64-linux/lib/libcudnn_adv_train.so.8
+sudo ln -sf /usr/local/cuda-11.1/targets/x86_64-linux/lib/libcudnn_ops_infer.so.8.1.1  /usr/local/cuda-11.1/targets/x86_64-linux/lib/libcudnn_ops_infer.so.8
+sudo ln -sf /usr/local/cuda-11.1/targets/x86_64-linux/lib/libcudnn_cnn_train.so.8.1.1  /usr/local/cuda-11.1/targets/x86_64-linux/lib/libcudnn_cnn_train.so.8
+sudo ln -sf /usr/local/cuda-11.1/targets/x86_64-linux/lib/libcudnn_adv_infer.so.8.1.1  /usr/local/cuda-11.1/targets/x86_64-linux/lib/libcudnn_adv_infer.so.8
+sudo ln -sf /usr/local/cuda-11.1/targets/x86_64-linux/lib/libcudnn_ops_train.so.8.1.1  /usr/local/cuda-11.1/targets/x86_64-linux/lib/libcudnn_ops_train.so.8
+sudo ln -sf /usr/local/cuda-11.1/targets/x86_64-linux/lib/libcudnn_cnn_infer.so.8.1.1 /usr/local/cuda-11.1/targets/x86_64-linux/lib/libcudnn_cnn_infer.so.8
+sudo ln -sf /usr/local/cuda-11.1/targets/x86_64-linux/lib/libcudnn.so.8.1.1  /usr/local/cuda-11.1/targets/x86_64-linux/lib/libcudnn.so.8
+sudo ldconfig
+ldconfig -N -v $(sed 's/:/ /' <<< $LD_LIBRARY_PATH) 2>/dev/null | grep libcudnn
 
 
 sudo add-apt-repository ppa:graphics-drivers/ppa -y
