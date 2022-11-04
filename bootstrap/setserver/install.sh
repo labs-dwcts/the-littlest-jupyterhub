@@ -21,7 +21,11 @@ sudo apt remove unattended-upgrades -y
 sudo apt install build-essential dkms libnvidia-common-460 -y
 
 
-# nvidia driver 460.91.03
+# nvidia driver 455.45.01 - cuda 11.1 
+# wget https://us.download.nvidia.com/XFree86/Linux-x86_64/455.45.01/NVIDIA-Linux-x86_64-455.45.01.run
+
+
+# nvidia driver 460.91.03 - cuda 11.2
 wget https://us.download.nvidia.com/XFree86/Linux-x86_64/460.91.03/NVIDIA-Linux-x86_64-460.91.03.run
 sudo sh NVIDIA-Linux-x86_64-460.91.03.run --ui=none --no-questions --accept-license --no-x-check
 # --disable-nouveau --no-cc-version-check --install-libglvnd

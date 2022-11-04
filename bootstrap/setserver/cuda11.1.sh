@@ -1,4 +1,4 @@
-# cuda 11.2, cudnn 8.1.1.33
+# cuda 11.1, cudnn 8.1.1.33
 
 
 sudo add-apt-repository ppa:graphics-drivers/ppa -y
@@ -11,6 +11,8 @@ sudo dpkg -i cuda-repo-ubuntu2004-11-1-local_11.1.0-455.23.05-1_amd64.deb
 sudo apt-key add /var/cuda-repo-ubuntu2004-11-1-local/7fa2af80.pub
 sudo apt-get update
 sudo apt-get -y install cuda
+# nvidia driver 455.45.01 - cuda 11.1 
+# wget https://us.download.nvidia.com/XFree86/Linux-x86_64/455.45.01/NVIDIA-Linux-x86_64-455.45.01.run
 
 
 FILEID="1-1TFu6U7yIXYPU5JEuB9bI4LOTyfKCz1"
