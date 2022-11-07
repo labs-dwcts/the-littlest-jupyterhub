@@ -22,6 +22,7 @@ sudo apt install build-essential dkms libnvidia-common-460 -y
 
 
 # nvidia driver 455.45.01 - cuda 11.1 
+# apt install build-essential libglvnd-dev pkg-config
 # wget https://us.download.nvidia.com/XFree86/Linux-x86_64/455.45.01/NVIDIA-Linux-x86_64-455.45.01.run
 
 
